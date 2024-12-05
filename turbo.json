@@ -1,6 +1,9 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
+  "globalEnv": [
+    "DOCS_DOMAIN"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -15,6 +18,10 @@
     },
     "dev": {
       "cache": false,
+      "persistent": true
+    },
+    "start": {
+      "dependsOn": ["build"],
       "persistent": true
     }
   }
